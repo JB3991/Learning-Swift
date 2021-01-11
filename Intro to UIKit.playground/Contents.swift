@@ -354,3 +354,73 @@ class Bicycle: Vehicle {
 }
  let bicycle = Bicycle()
 bicycle.hasBasket = true
+
+bicycle.currentSpeed = 15.0
+print("Bicycle: \(bicycle.description)")
+
+// the Tandam has inherited the Bicycle class as well
+class Tandem: Bicycle {
+    var currentNumberOfPassenagers = 0
+}
+let tandam = Tandem()
+tandam.hasBasket = true
+tandam.currentNumberOfPassenagers = 2
+tandam.currentSpeed = 22.0
+print("Tandem \(tandam.description)")
+
+// override a inherited characteristic
+tandam.makeNoise() // .makeNoise is a characteristic from the Vehicle Method
+
+class Train: Vehicle {
+    override func makeNoise() {
+        print("Choo Choo!")
+    }
+}
+let train = Train()
+train.makeNoise()
+
+
+class Car5: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + " in gear \(gear)"
+    }
+}
+let car5 = Car5()
+car5.currentSpeed = 25.0
+car5.gear = 3
+print("Car: \(car5.description)")
+
+class Person3 {
+    let name: String
+    init(name:String) {
+        self.name = name
+    }
+}
+
+class student: Person3 {
+    var favSubject: String
+    
+    init (name: String, favSubject: String) {
+        self.favSubject = favSubject
+        super.init(name: name)
+    }
+}
+
+// References
+
+class Person4 {
+    let name2: String
+    var agee: Int
+    
+    init(name2: String, agee: Int) {
+        self.name2 = name
+        self.agee = agee
+    }
+}
+
+var jack = Person4(name2: "Jack", agee: 15)
+var myFriend = jack
+jack.agee += 2
+print(jack.agee)
+print(myFriend.agee)
