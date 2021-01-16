@@ -1,2 +1,2 @@
-# Swift-intro-code
+# Learning Swift
 Basic Swift code
