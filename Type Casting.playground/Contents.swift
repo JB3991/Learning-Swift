@@ -2,9 +2,11 @@ import UIKit
 
 // Type Casting
 
+// array which takes Any type
 var items: [Any] = ["Test", 123, "Hello", 4156, true, false, "Jon", 66, 1, ]
 print(items)
 
+// loop through the itams and prints out a different string or Strings, Ints and Booleons 
 for item in items {
     if let item = item as? Int {
         print("The Integer has a value of \(item)")
